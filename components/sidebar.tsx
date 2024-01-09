@@ -1,52 +1,64 @@
 import Link from "next/link";
 import React from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { GoHome } from "react-icons/go";
 import { CiWallet } from "react-icons/ci";
+import Image from "next/image";
+import orders from "@/assets/icons/orders.png";
+import home from "@/assets/icons/home.png";
+import products from "@/assets/icons/products.png";
+import delivery from "@/assets/icons/delivery.png";
+import marketing from "@/assets/icons/marketing.png";
+import analytics from "@/assets/icons/analytics.png";
+import payouts from "@/assets/icons/payouts.png";
+import discounts from "@/assets/icons/discounts.png";
+import audience from "@/assets/icons/audience.png";
+import appearence from "@/assets/icons/appearence.png";
+import plugins from "@/assets/icons/plugins.png";
+import nishyan from "@/assets/icons/nishyan.png"
 
 const menuLists = [
   {
-    icon: <GoHome className="text-xl" />,
+    icon: home,
     name: "Home",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: orders,
     name: "Orders",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: products,
     name: "Products",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: delivery,
     name: "Delivery",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: marketing,
     name: "Marketing",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: analytics,
     name: "Analytics",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: payouts,
     name: "Payouts",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: discounts,
     name: "Discounts",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: audience,
     name: "Audience",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: appearence,
     name: "Appearence",
   },
   {
-    icon: <GoHome className="text-xl" />,
+    icon: plugins,
     name: "Plugins",
   },
 ];
@@ -56,7 +68,9 @@ const Sidebar = () => {
     <aside className="hidden sticky top-0 left-0 lg:flex lg:flex-col min-w-[224px] px-2 py-4 h-[100dvh] gap-4 bg-[#1E2640] justify-between">
       <div className="w-full h-full flex flex-col gap-6 items-center">
         <div className="flex gap-3 text-[#FFFFFF] items-center w-fit mx-auto">
-          <div className=" bg-white w-[39px] h-[39px] m-[0.5px] rounded-[4px]"></div>
+          <div className=" bg-white w-[39px] h-[39px] m-[0.5px] rounded-[4px] relative">
+            <Image src={nishyan} alt="nishyanLogo" fill className="object-cover object-center"/>
+          </div>
           <div className="flex flex-col gap-1 w-[108px]">
             <h3 className="font-medium text-[15px]">Nishyan</h3>
             <Link
@@ -73,9 +87,18 @@ const Sidebar = () => {
             <Link
               key={item.name}
               href={"#"}
-              className="px-4 py-2 flex gap-3 text-white items-center rounded-[4px] hover:bg-slate-500"
+              className={`${
+                item.name === "Payouts" ? "bg-[#FFFFFF]/10" : ""
+              } px-4 py-2 flex gap-3 text-[#D2D4D9] items-center rounded-[4px] hover:bg-[#FFFFFF]/10`}
             >
-              {item.icon}
+              <div className="relative w-[18px] h-[18px]">
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
               <p className="text-[14px] font-medium">{item.name}</p>
             </Link>
           ))}

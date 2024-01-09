@@ -4,4 +4,6 @@
  
 html, body {
   background-color: #FAFAFA;
+  min-width: 350px;
+  /* overflow-x: auto; */
 }

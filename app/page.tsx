@@ -7,41 +7,11 @@ import {
 } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
-
-const tableData = [
-  {
-    orderId: "#281209",
-    status: "Successful",
-    transactionId: "TRX123456",
-    refundDate: "Today, 8:45 PM",
-    orderAmount: "₹1125.00",
-  },
-  {
-    orderId: "#281210",
-    status: "Processing",
-    transactionId: "TRX789012",
-    refundDate: "Tomorrow, 10:00 AM",
-    orderAmount: "₹950.50",
-  },
-  {
-    orderId: "#281211",
-    status: "Successful",
-    transactionId: "TRX345678",
-    refundDate: "Yesterday, 3:30 PM",
-    orderAmount: "₹750.00",
-  },
-  {
-    orderId: "#281212",
-    status: "Successful",
-    transactionId: "TRX901234",
-    refundDate: "Today, 11:20 AM",
-    orderAmount: "₹2000.00",
-  },
-];
+import { tableData } from "@/data/table";
 
 const DashboardPage = () => {
   return (
-    <main className="p-8 w-full gap-8 flex flex-col">
+    <main className="p-2 sm:p-8 w-full gap-8 flex flex-col">
       <section className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <h5 className="font-medium text-xl">Overview</h5>
@@ -49,8 +19,8 @@ const DashboardPage = () => {
             This Month <FaChevronDown />
           </button>
         </div>
-        <div className="flex gap-5">
-          <div className="rounded-[8px] flex-grow hover:bg-[#0E4F82] bg-[#146EB4] text-white">
+        <div className="flex gap-5 flex-wrap">
+          <div className="rounded-[8px] flex-grow hover:bg-[#0E4F82] bg-[#146EB4] text-white min-w-[300px]">
             <div className="p-5 flex flex-col gap-4">
               <h5 className="flex gap-3 items-center">
                 Next Payout <FaRegCircleQuestion />
@@ -67,7 +37,7 @@ const DashboardPage = () => {
               <p>Today, 4:00PM</p>
             </div>
           </div>
-          <div className="flex-grow rounded-[8px] bg-white p-5 flex flex-col gap-4 shadow-sm h-fit">
+          <div className="flex-grow rounded-[8px] bg-white p-5 flex flex-col gap-4 shadow-sm h-fit min-w-[300px]">
             <h5 className="flex gap-3 items-center text-[#4D4D4D]">
               Amount Pending <FaRegCircleQuestion />
             </h5>
@@ -78,7 +48,7 @@ const DashboardPage = () => {
               </p>
             </div>
           </div>
-          <div className="flex-grow rounded-[8px] bg-white p-5 flex flex-col gap-4 shadow-sm h-fit">
+          <div className="flex-grow rounded-[8px] bg-white p-5 flex flex-col gap-4 shadow-sm h-fit min-w-[300px]">
             <h5 className="flex gap-3 items-center text-[#4D4D4D]">
               Amount Processed <FaRegCircleQuestion />
             </h5>
@@ -103,8 +73,8 @@ const DashboardPage = () => {
           </div>
         </div>
         <div className="flex flex-col px-3 pt-3 pb-2 gap-3 rounded-[8px] bg-white">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 px-4 py-[9px] border border-[#F2F2F2] text-[#808080] rounded w-full max-w-[300px]">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 px-4 py-[6px] border border-[#D9D9D9] text-[#808080] rounded w-full max-w-[300px]">
               <IoSearch className="text-lg" />
               <input
                 type="text"
@@ -113,7 +83,7 @@ const DashboardPage = () => {
               />
             </div>
             <div className="flex items-center gap-3">
-              <button className="flex items-center gap-[6px] px-3 py-[6px] border border-[#D9D9D9] text-[#4D4D4D] rounded">
+              <button className="flex items-center gap-[6px] px-3 py-[6px] border border-[#D9D9D9] text-[#4D4D4D] rounded min-w-[75px]">
                 Sort{" "}
                 <Image
                   src={"/updown.png"}
@@ -130,7 +100,7 @@ const DashboardPage = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full">
               <colgroup>
-                <col className="w-1/5" /> {/* Equal width for each column */}
+                <col className="w-1/5" />
                 <col className="w-1/5" />
                 <col className="w-1/5" />
                 <col className="w-1/5" />
