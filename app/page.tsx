@@ -11,7 +11,7 @@ import { tableData } from "@/data/table";
 
 const DashboardPage = () => {
   return (
-    <main className="p-2 sm:p-8 w-full gap-8 flex flex-col">
+    <main className="p-3 sm:p-8 w-full gap-8 flex flex-col">
       <section className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <h5 className="font-medium text-xl">Overview</h5>
