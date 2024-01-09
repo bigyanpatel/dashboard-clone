@@ -16,6 +16,7 @@ const Header = () => {
         border-b
         border-[#D9D9D9]
         shadow
+        sticky top-0
     "
     >
       <div className="flex gap-4 items-center flex-grow">

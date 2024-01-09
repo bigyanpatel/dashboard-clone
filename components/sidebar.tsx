@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaChevronDown } from "react-icons/fa";
@@ -54,7 +53,7 @@ const menuLists = [
 
 const Sidebar = () => {
   return (
-    <aside className="hidden lg:flex lg:flex-col min-w-[224px] px-2 py-4 h-[100dvh] gap-4 bg-[#1E2640] justify-between">
+    <aside className="hidden sticky top-0 left-0 lg:flex lg:flex-col min-w-[224px] px-2 py-4 h-[100dvh] gap-4 bg-[#1E2640] justify-between">
       <div className="w-full h-full flex flex-col gap-6 items-center">
         <div className="flex gap-3 text-[#FFFFFF] items-center w-fit mx-auto">
           <div className=" bg-white w-[39px] h-[39px] m-[0.5px] rounded-[4px]"></div>

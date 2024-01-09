@@ -19,14 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={twMerge("bg-background", inter.className)}>
-        <main className="flex">
-          <Sidebar />
-          <div className="w-full">
-            <Header />
-            {children}
-          </div>
-        </main>
+      <body className={twMerge("bg-background flex relative", inter.className)}>
+        <Sidebar />
+        <div className="w-full">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
