@@ -8,9 +8,40 @@ import {
 import { IoSearch } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
 
+const tableData = [
+  {
+    orderId: "#281209",
+    status: "Successful",
+    transactionId: "TRX123456",
+    refundDate: "Today, 8:45 PM",
+    orderAmount: "₹1125.00",
+  },
+  {
+    orderId: "#281210",
+    status: "Processing",
+    transactionId: "TRX789012",
+    refundDate: "Tomorrow, 10:00 AM",
+    orderAmount: "₹950.50",
+  },
+  {
+    orderId: "#281211",
+    status: "Successful",
+    transactionId: "TRX345678",
+    refundDate: "Yesterday, 3:30 PM",
+    orderAmount: "₹750.00",
+  },
+  {
+    orderId: "#281212",
+    status: "Successful",
+    transactionId: "TRX901234",
+    refundDate: "Today, 11:20 AM",
+    orderAmount: "₹2000.00",
+  },
+];
+
 const DashboardPage = () => {
   return (
-    <main className="p-8 w-full gap-8 flex flex-col h-full bg-[#FAFAFA]">
+    <main className="p-8 w-full gap-8 flex flex-col">
       <section className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <h5 className="font-medium text-xl">Overview</h5>
@@ -92,9 +123,67 @@ const DashboardPage = () => {
                 />
               </button>
               <button className="flex items-center p-2 border border-[#D9D9D9] text-[#4D4D4D] rounded">
-                <FiDownload className="text-xl"/>
+                <FiDownload className="text-xl" />
               </button>
             </div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
+              <colgroup>
+                <col className="w-1/5" /> {/* Equal width for each column */}
+                <col className="w-1/5" />
+                <col className="w-1/5" />
+                <col className="w-1/5" />
+                <col className="w-1/5" />
+              </colgroup>
+              <thead className="text-[#4D4D4D]">
+                <tr className="bg-[#F2F2F2] rounded-lg overflow-hidden">
+                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
+                    Order ID
+                  </th>
+                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
+                    Status
+                  </th>
+                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
+                    Transaction ID
+                  </th>
+                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
+                    Refund Date
+                  </th>
+                  <th className="px-3 py-[10px] text-right text-sm font-medium tracking-wider">
+                    Order Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white px-3 divide-y divide-[#E6E6E6]">
+                {tableData.map((row, index) => (
+                  <tr className="text-sm" key={index}>
+                    <td className="px-3 py-[10px] whitespace-nowrap text-[#146EB4] font-medium">
+                      {row.orderId}
+                    </td>
+                    <td className="px-3 py-[10px] whitespace-nowrap flex items-center gap-1 text-[#1A181E]">
+                      <span
+                        className={`${
+                          row.status === "Successful"
+                            ? "bg-green-500"
+                            : "bg-[#999999]"
+                        } w-2 h-2 rounded-full`}
+                      ></span>
+                      {row.status}
+                    </td>
+                    <td className="px-3 py-[10px] whitespace-nowrap text-[#4D4D4D]">
+                      {row.transactionId}
+                    </td>
+                    <td className="px-3 py-[10px] whitespace-nowrap text-[#4D4D4D]">
+                      {row.refundDate}
+                    </td>
+                    <td className="px-3 py-[10px] whitespace-nowrap text-[#1A181E] text-right">
+                      {row.orderAmount}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
