@@ -1,13 +1,13 @@
 'use client'
 
 import "./globals.css";
-import { DM_Sans } from "next/font/google";
+import { Inter } from 'next/font/google'
 import { twMerge } from "tailwind-merge";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
 import { RecoilRoot } from "recoil";
 
-const inter = DM_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

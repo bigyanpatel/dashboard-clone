@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { CiWallet } from "react-icons/ci";
 import Image from "next/image";
@@ -19,7 +19,7 @@ import plugins from "@/assets/icons/plugins.png";
 import nishyan from "@/assets/icons/nishyan.png";
 import { useRecoilState } from "recoil";
 import { SideBarOpen } from "@/atoms/sidebarAtom";
-import { IoIosCloseCircle, IoMdClose } from "react-icons/io";
+import { IoIosCloseCircle } from "react-icons/io";
 
 const menuLists = [
   {
