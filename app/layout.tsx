@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
+'use client'
+
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
+import { RecoilRoot } from "recoil";
 
 const inter = DM_Sans({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Dashboard Clone | by Bigyan",
-  description: "100% pixel perfect clone doesn't exit!!!",
-};
 
 export default function RootLayout({
   children,
@@ -20,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={twMerge("bg-background flex relative", inter.className)}>
-        <Sidebar />
-        <div className="w-full">
-          <Header />
-          {children}
-        </div>
+        <RecoilRoot>
+          <Sidebar />
+          <div className="w-full">
+            <Header />
+            {children}
+          </div>
+        </RecoilRoot>
       </body>
     </html>
   );

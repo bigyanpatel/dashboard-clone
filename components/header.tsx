@@ -1,10 +1,16 @@
+'use client'
+
 import React from "react";
 import { IoSearch } from "react-icons/io5";
 import { FaCaretDown, FaRegCircleQuestion } from "react-icons/fa6";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useSetRecoilState } from "recoil";
+import { SideBarOpen } from "@/atoms/sidebarAtom";
 
 const Header = () => {
+  const setSideBarOpen = useSetRecoilState(SideBarOpen);
+
   return (
     <header
       className="
@@ -24,8 +30,11 @@ const Header = () => {
     "
     >
       <div className="flex gap-1 sm:gap-4 items-center sm:flex-grow">
-        <button className="block lg:hidden">
-          <GiHamburgerMenu className="text-xl"/>
+        <button
+          className="block lg:hidden"
+          onClick={() => setSideBarOpen((prev) => !prev)}
+        >
+          <GiHamburgerMenu className="text-xl" />
         </button>
         <h5 className="text-[#1A181E] font-medium text-xl">Payouts</h5>
         <div className="flex items-center gap-[6px] text-[#4D4D4D] text-sm">
