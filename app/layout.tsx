@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Dukaan Dashboard by Bigyan Patel</title>
+      </head>
       <body className={twMerge("bg-background flex relative", inter.className)}>
         <RecoilRoot>
           <Sidebar />

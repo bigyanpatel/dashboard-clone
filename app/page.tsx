@@ -8,6 +8,7 @@ import {
 import { IoSearch } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
 import { tableData } from "@/data/table";
+import Link from "next/link";
 
 const DashboardPage = () => {
   return (
@@ -157,6 +158,16 @@ const DashboardPage = () => {
           </div>
         </div>
       </section>
+      <h5 className="text-center text-gray-500">
+        Made with ❤️ by{" "}
+        <Link
+          href={"https://twitter.com/meet_bigyan20"}
+          className="underline font-bold"
+          target="_blank"
+        >
+          Bigyan Patel
+        </Link>
+      </h5>
     </main>
   );
 };
