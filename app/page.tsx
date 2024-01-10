@@ -140,13 +140,13 @@ const DashboardPage = () => {
                     <td className="px-3 py-[10px] whitespace-nowrap text-[#146EB4] font-medium">
                       {row.orderId}
                     </td>
-                    <td className="px-3 py-[10px] whitespace-nowrap flex items-center gap-1 text-[#1A181E]">
+                    <td className="px-3 py-[10px] whitespace-nowrap flex items-center gap-[6px] text-[#1A181E]">
                       <span
                         className={`${
                           row.status === "Successful"
                             ? "bg-green-500"
                             : "bg-[#999999]"
-                        } w-2 h-2 rounded-full`}
+                        } w-[10px] h-[10px] rounded-full`}
                       ></span>
                       {row.status}
                     </td>
