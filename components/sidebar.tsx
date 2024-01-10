@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { CiWallet } from "react-icons/ci";
 import Image from "next/image";
 import orders from "@/assets/icons/orders.png";
 import home from "@/assets/icons/home.png";
@@ -16,10 +15,11 @@ import discounts from "@/assets/icons/discounts.png";
 import audience from "@/assets/icons/audience.png";
 import appearence from "@/assets/icons/appearence.png";
 import plugins from "@/assets/icons/plugins.png";
-import nishyan from "@/assets/icons/nishyan.png";
+import nishyan from "@/assets/icons/nishyan.svg";
 import { useRecoilState } from "recoil";
 import { SideBarOpen } from "@/atoms/sidebarAtom";
 import { IoIosCloseCircle } from "react-icons/io";
+import wallet from "@/assets/icons/wallet.svg"
 
 const menuLists = [
   {
@@ -119,14 +119,14 @@ const Sidebar = () => {
                   alt="nishyanLogo"
                   fill
                   className="object-cover object-center"
-                  sizes="50px"
+                  quality={95}
                 />
               </div>
-              <div className="flex flex-col gap-1 w-[108px]">
-                <h3 className="font-medium text-[15px]">Nishyan</h3>
+              <div className="flex flex-col gap-1 w-[108px] justify-center">
+                <h3 className="font-medium text-[15px] leading-[22px]">Nishyan</h3>
                 <Link
                   href={"#"}
-                  className="underline font-sans text-[13px] font-light"
+                  className="underline leading-[16px] text-[13px] font-extralight w-fit text-[#D2D4D9]"
                 >
                   Visit Store
                 </Link>
@@ -155,13 +155,13 @@ const Sidebar = () => {
               ))}
             </div>
           </div>
-          <div className="py-[6px] px-3 bg-[#353C53] mx-2 rounded-[4px]">
+          <div className="py-[6px] px-3 bg-[#353C53] mx-2 rounded">
             <div className="flex gap-3 items-center">
-              <div className="w-[36px] h-[36px] bg-[#FFFFFF]/10 rounded-[4px] p-[6px]">
-                <CiWallet className="w-full h-full text-white" />
+              <div className="w-9 h-9 bg-[#FFFFFF]/10 rounded p-[6px] flex justify-center items-center">
+                <Image src={wallet} alt="wallet_icon" width={23.65} height={19.6}/>
               </div>
               <div className="flex flex-col text-white gap-[2px]">
-                <h3 className="text-[13px]">Available Credits</h3>
+                <h3 className="text-[13px] text-[#FFFFFF] font-light">Available Credits</h3>
                 <h6 className="text-base font-medium">224.10</h6>
               </div>
             </div>
