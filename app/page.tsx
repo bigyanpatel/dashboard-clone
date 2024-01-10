@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaChevronDown,
   FaChevronRight,
@@ -11,6 +13,12 @@ import { tableData } from "@/data/table";
 import Link from "next/link";
 
 const DashboardPage = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <main className="p-3 sm:p-8 w-full gap-8 flex flex-col">
       <section className="flex flex-col gap-6">
@@ -108,8 +116,8 @@ const DashboardPage = () => {
                 <col className="w-1/5" />
               </colgroup>
               <thead className="text-[#4D4D4D]">
-                <tr className="bg-[#F2F2F2] rounded-lg overflow-hidden">
-                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
+                <tr className="bg-[#F2F2F2]">
+                  <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider rounded-l">
                     Order ID
                   </th>
                   <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
@@ -121,14 +129,14 @@ const DashboardPage = () => {
                   <th className="px-3 py-[10px] text-left text-sm font-medium tracking-wider">
                     Refund Date
                   </th>
-                  <th className="px-3 py-[10px] text-right text-sm font-medium tracking-wider">
+                  <th className="px-3 py-[10px] text-right text-sm font-medium tracking-wider rounded-r">
                     Order Amount
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white px-3 divide-y divide-[#E6E6E6]">
+              <tbody className="bg-white divide-[#E6E6E6]">
                 {tableData.map((row, index) => (
-                  <tr className="text-sm" key={index}>
+                  <tr className="text-sm relative" key={index}>
                     <td className="px-3 py-[10px] whitespace-nowrap text-[#146EB4] font-medium">
                       {row.orderId}
                     </td>
@@ -151,6 +159,9 @@ const DashboardPage = () => {
                     <td className="px-3 py-[10px] whitespace-nowrap text-[#1A181E] text-right">
                       {row.orderAmount}
                     </td>
+                    {isMounted && index !== tableData.length - 1 && (
+                      <span className="absolute bg-[#E6E6E6] w-[calc(100%-20px)] h-[1px] bottom-0 left-[10px]"></span>
+                    )}
                   </tr>
                 ))}
               </tbody>

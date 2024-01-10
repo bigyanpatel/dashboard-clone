@@ -1,9 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-html, body {
-  background-color: #FAFAFA;
+
+html,
+body {
+  background-color: #fafafa;
   min-width: 350px;
-  /* overflow-x: auto; */
+}
+
+.table-container thead {
+  position: relative;
+}
+
+.table-container thead::after {
+  content: "";
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
+  z-index: -1;
 }
