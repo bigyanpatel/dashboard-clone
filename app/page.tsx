@@ -136,7 +136,7 @@ const DashboardPage = () => {
               </thead>
               <tbody className="bg-white divide-[#E6E6E6]">
                 {tableData.map((row, index) => (
-                  <tr className="text-sm relative" key={index}>
+                  <tr className="text-sm" key={index}>
                     <td className="px-3 py-[10px] whitespace-nowrap text-[#146EB4] font-medium">
                       {row.orderId}
                     </td>
